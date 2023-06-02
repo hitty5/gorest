@@ -7,7 +7,7 @@ REST API implementation using gin.
 Get albums
 
 ```bash
-curl -XGET http://localhost:8080/albums
+curl -XGET http://localhost:80/albums
 ```
 
 Post album

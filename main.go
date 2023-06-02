@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"os"
 )
 
 type Album struct {
@@ -55,5 +56,9 @@ func setupRouter() *gin.Engine {
 
 func main() {
 	router := setupRouter()
-	router.Run(":8080")
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "8080"
+	}
+	router.Run(":" + port)
 }
